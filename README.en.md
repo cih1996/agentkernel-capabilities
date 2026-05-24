@@ -18,7 +18,7 @@ AgentKernel Capabilities is an independent MCP stdio capability server written i
 - `write`
 - `bash`
 
-It is not an AI runtime and not part of the AgentKernel core. AgentKernel only needs to understand generic Tool abstractions, while concrete capabilities can be plugged in dynamically through MCP.
+It is designed for AgentKernel and other MCP clients that need local code, file, and command execution tools.
 
 ## Use Cases
 
@@ -82,7 +82,7 @@ Example:
 {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"client","version":"0.1"}}}
 ```
 
-This is not an HTTP/TCP server. Running it directly in a terminal will not produce output until a client writes JSON-RPC lines to stdin.
+MCP clients write JSON-RPC lines to stdin and read responses from stdout.
 
 ## MCP Methods
 
